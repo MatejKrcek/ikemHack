@@ -86,7 +86,7 @@ class _AlertScreenState extends State<AlertScreen> {
             ],
           ),
           Text(
-            '$_currentTime',
+            '$_currentTime s',
             style: const TextStyle(
                 fontWeight: FontWeight.bold, color: Colors.black, fontSize: 50),
           ),

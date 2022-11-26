@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Potřebujeme tvou pomoc'),
+        title: const Text('CareMunity'),
         automaticallyImplyLeading: false,
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -91,15 +91,6 @@ class _MainScreenState extends State<MainScreen> {
           child: _currentIndex == 1
               ? Column(
                   children: [
-                    Image.asset(
-                      "assets/logo.png",
-                      fit: BoxFit.cover,
-                    ),
-                    Image.asset(
-                      "assets/maps.jpg",
-                      fit: BoxFit.cover,
-                    ),
-                    const Spacer(),
                     Container(
                       height: 50,
                       decoration: BoxDecoration(
@@ -117,7 +108,7 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                             Text(
-                              "K Zelelé louce, ",
+                              "Příjezd IZS za ",
                               style: TextStyle(
                                 color: Colors.red,
                                 fontSize: 20,
@@ -126,7 +117,7 @@ class _MainScreenState extends State<MainScreen> {
                               textAlign: TextAlign.center,
                             ),
                             Text(
-                              "230 m, 4 min",
+                              "6:11",
                               style: TextStyle(
                                 color: Colors.red,
                                 fontSize: 20,
@@ -136,7 +127,52 @@ class _MainScreenState extends State<MainScreen> {
                           ],
                         ),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: 490,
+                      child: Image.asset(
+                        "assets/maps3.jpg",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const SizedBox(height: 10,),
+                    Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.red,
+                        ),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              "Vyzvednout AED v IKEM, ",
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              "20 m, 31 s",
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 20,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 )
               : _currentIndex == 0

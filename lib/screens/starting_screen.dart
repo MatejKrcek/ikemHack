@@ -9,7 +9,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("AED App"),
+        title: const Text("CareMunity"),
       ),
       body: Column(
         children: [

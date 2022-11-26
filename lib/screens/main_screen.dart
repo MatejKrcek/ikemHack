@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ikem_hack/screens/edu_screen.dart';
+import 'package:ikem_hack/screens/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -9,7 +11,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 1;
-  final List<Widget> _children = [];
+  final List<Widget> _children = [
+    const EduSceeen(),
+    const ProfileScreen(),
+  ];
   final List<String> _toolTips = [
     "Edukace",
     "POMOC",
@@ -21,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Pojď pomoc'),
+        title: const Text('Potřebujeme tvou pomoc'),
         automaticallyImplyLeading: false,
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -30,16 +35,19 @@ class _MainScreenState extends State<MainScreen> {
         onTap: (index) {
           switch (index) {
             case 0:
-              print('1');
+              setState(() {
+                _currentIndex = 0;
+              });
               break;
             case 1:
-              print('1');
+              setState(() {
+                _currentIndex = 1;
+              });
               break;
             case 2:
-              print('2');
-              break;
-            case 3:
-              print('2');
+              setState(() {
+                _currentIndex = 2;
+              });
               break;
             default:
           }
@@ -52,7 +60,7 @@ class _MainScreenState extends State<MainScreen> {
         elevation: 5,
         items: [
           Icons.list,
-          Icons.taxi_alert,
+          Icons.heart_broken_outlined,
           Icons.person,
         ]
             .asMap()
@@ -67,7 +75,7 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                       decoration: BoxDecoration(
                         color: _currentIndex == key
-                            ? const Color.fromARGB(255, 97, 184, 255)
+                            ? Colors.red
                             : Colors.transparent,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -79,49 +87,61 @@ class _MainScreenState extends State<MainScreen> {
             .toList(),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView(
-          children: [
-            Container(
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                border: Border.all(
-                  color: Colors.blue,
-                ),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      "K Zelelé louce, ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
+          padding: const EdgeInsets.all(8.0),
+          child: _currentIndex == 1
+              ? Column(
+                  children: [
+                    Image.asset(
+                      "assets/logo.png",
+                      fit: BoxFit.cover,
                     ),
-                    Text(
-                      "230 m, 4 min",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                      textAlign: TextAlign.center,
+                    Image.asset(
+                      "assets/maps.jpg",
+                      fit: BoxFit.cover,
                     ),
+                    const Spacer(),
+                    Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.red,
+                        ),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              "K Zelelé louce, ",
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              "230 m, 4 min",
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 20,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
                   ],
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
+                )
+              : _currentIndex == 0
+                  ? _children[0]
+                  : _children[1]),
     );
   }
 }

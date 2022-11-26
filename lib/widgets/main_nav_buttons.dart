@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ikem_hack/screens/alert_screen.dart';
 import 'package:ikem_hack/screens/main_screen.dart';
 
 class MainNavButtons extends StatelessWidget {
@@ -33,7 +34,7 @@ class MainNavButtons extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MainScreen()),
+                          builder: (context) => const AlertScreen()),
                     );
                   },
                   child: const Text(
@@ -49,7 +50,11 @@ class MainNavButtons extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
-                  color: Theme.of(context).primaryColor,
+                  color: Colors.white,
+                  border: Border.all(
+                    width: 2.0,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
                 child: TextButton(
                   onPressed: () {
@@ -70,7 +75,7 @@ class MainNavButtons extends StatelessWidget {
                     'Zdravotní sestra',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      color: Colors.red,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -79,7 +84,11 @@ class MainNavButtons extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
-                  color: Colors.blue,
+                  color: Colors.white,
+                  border: Border.all(
+                    width: 2.0,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
                 child: TextButton(
                   onPressed: () {
@@ -101,7 +110,7 @@ class MainNavButtons extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 20,
-                      color: Colors.white,
+                      color: Colors.red,
                     ),
                     textAlign: TextAlign.center,
                   ),

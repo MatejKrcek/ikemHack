@@ -117,7 +117,7 @@ class _MainScreenState extends State<MainScreen> {
                               textAlign: TextAlign.center,
                             ),
                             Text(
-                              "6:11",
+                              "6:21",
                               style: TextStyle(
                                 color: Colors.red,
                                 fontSize: 20,
@@ -131,7 +131,7 @@ class _MainScreenState extends State<MainScreen> {
                     SizedBox(
                       height: 490,
                       child: Image.asset(
-                        "assets/maps3.jpg",
+                        "assets/maps.jpg",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -153,7 +153,7 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                             Text(
-                              "Vyzvednout AED v IKEM, ",
+                              "K Zelelé louce, ",
                               style: TextStyle(
                                 color: Colors.red,
                                 fontSize: 20,
@@ -162,7 +162,7 @@ class _MainScreenState extends State<MainScreen> {
                               textAlign: TextAlign.center,
                             ),
                             Text(
-                              "20 m, 31 s",
+                              "230 m, 3:51 min",
                               style: TextStyle(
                                 color: Colors.red,
                                 fontSize: 20,
